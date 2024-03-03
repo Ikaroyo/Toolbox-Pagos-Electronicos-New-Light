@@ -38,6 +38,28 @@ body {
 .navbar-links {
   list-style-type: none;
   display: flex;
+  align-items: center;
+}
+
+lottie-player {
+  width: 60px;
+  height: 60px;
+}
+
+lottie-player:hover {
+  cursor: pointer;
+}
+
+span {
+  height: 0px;
+  width: 10vw;
+}
+
+/* if width is less than 600px span width will be 0 */
+@media screen and (max-width: 1000px) {
+  span {
+    display: none;
+  }
 }
 
 .navbar-links li a {

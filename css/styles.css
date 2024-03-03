@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+#iframe-container {
+  flex-grow: 1;
+}
+
+#content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  overflow: auto;
+}

@@ -76,17 +76,10 @@ function procesarArchivos(archivos) {
                   .slice(startDireccion, endDireccion)
                   .trim();
 
-                /* para encontrar al titular, buscar el numero de recibo, y la palabra a continuacion es el inicio del nombre del titular
-                    por ejemplo: 0001-11817931  CAMERA, RUDY ROBERTO  CAMERA, RUDY ROBERTO 51-Rec.100% s/Agua
-                    0001-11817931 es el numero de recibo
-                    CAMERA, RUDY ROBERTO es el nombre del titular
-                    es decir que hay que buscar la siguiente palabra  hasta que se repita
-                    */
-
+                // Encontrar al titular basado en el número de recibo
                 const numeroRecibo = recibo ? recibo.str : "";
                 const numeroCuenta = cuenta ? cuenta.str : "";
 
-                // Encontrar al titular basado en el número de recibo
                 let nombreTitular = "";
                 if (numeroRecibo) {
                   const indexRecibo = textDireccion.indexOf(numeroRecibo);
@@ -298,6 +291,8 @@ botonGenerar.addEventListener("click", function () {
   // Agregar los encabezados manualmente
   const encabezados = [
     "Cuenta",
+    "Titular",
+    "Dirección",
     "Recibo",
     "Clave Pago Electrónico",
     "Archivo",

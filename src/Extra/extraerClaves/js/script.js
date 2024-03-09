@@ -18,9 +18,7 @@ document.addEventListener("dragover", function (event) {
 });
 
 function clearTable() {
-  while (tablaEmision.rows.length > 1) {
-    tablaEmision.deleteRow(1);
-  }
+  tablaEmision.innerHTML = "";
 }
 // Función para procesar los archivos que se han soltado en la página
 function procesarArchivos(archivos) {
@@ -328,4 +326,106 @@ botonGenerar.addEventListener("click", function () {
   // Generar el archivo xlsx
   const nombreArchivo = "Claves-Pago Electronico.xlsx";
   XLSX.writeFile(libro, nombreArchivo);
+});
+
+// Controlador de eventos para el botón de generar JSON
+
+const botonGenerarJson = document.getElementById("generarJson");
+botonGenerarJson.addEventListener("click", function () {
+  const tablaEmision = document.getElementById("tablaEmision");
+
+  // Obtener los datos de la tabla
+  const filasTabla = tablaEmision.querySelectorAll("tbody tr");
+  const datos = Array.from(filasTabla).map((fila) => {
+    const celdas = Array.from(fila.querySelectorAll("td")).map(
+      (td) => td.textContent
+    );
+    return celdas;
+  });
+
+  // Crear un objeto JSON a partir de los datos
+  const json = JSON.stringify({ data: datos }, null, 2);
+
+  // Crear un elemento <a> para descargar el archivo JSON
+  const link = document.createElement("a");
+  link.href = `data:text/json;charset=utf-8,${encodeURIComponent(json)}`;
+  link.download = "claves-pago-electronico.json";
+  link.click();
+
+  // Mostrar un mensaje de confirmación
+  alert("Se ha descargado el archivo JSON con éxito.");
+});
+
+const botonOrdenar = document.getElementById("ordenar-lista");
+
+botonOrdenar.addEventListener("click", function () {
+  const tablaEmision = document.getElementById("tablaEmision");
+  const filas = tablaEmision.getElementsByTagName("tr");
+  const datos = [];
+  for (let i = 0; i < filas.length; i++) {
+    const celdas = filas[i].getElementsByTagName("td");
+    const cuenta = celdas[0].textContent;
+    const usuario = celdas[1].textContent;
+    const direccion = celdas[2].textContent;
+    const recibo = celdas[3].textContent;
+    const clave = celdas[4].textContent;
+    const archivo = celdas[5].textContent;
+    const pagina = celdas[6].textContent;
+    const tipo = celdas[7].textContent;
+    datos.push({
+      cuenta,
+      usuario,
+      direccion,
+      recibo,
+      clave,
+      archivo,
+      pagina,
+      tipo,
+    });
+  }
+
+  datos.sort((a, b) => {
+    if (a.cuenta < b.cuenta) {
+      return -1;
+    }
+    if (a.cuenta > b.cuenta) {
+      return 1;
+    }
+    return 0;
+  });
+  const tbody = document.getElementById("tablaEmision");
+  tbody.innerHTML = "";
+  for (const dato of datos) {
+    const tr = document.createElement("tr");
+    const tdCuenta = document.createElement("td");
+    tdCuenta.textContent = dato.cuenta;
+    const tdUsuario = document.createElement("td");
+    tdUsuario.textContent = dato.usuario;
+    const tdDireccion = document.createElement("td");
+    tdDireccion.textContent = dato.direccion;
+    const tdRecibo = document.createElement("td");
+    tdRecibo.textContent = dato.recibo;
+    const tdClave = document.createElement("td");
+    tdClave.textContent = dato.clave;
+    const tdArchivo = document.createElement("td");
+    tdArchivo.textContent = dato.archivo;
+    const tdPagina = document.createElement("td");
+    tdPagina.textContent = dato.pagina;
+    const tdTipo = document.createElement("td");
+    tdTipo.textContent = dato.tipo;
+    tr.appendChild(tdCuenta);
+    tr.appendChild(tdUsuario);
+    tr.appendChild(tdDireccion);
+    tr.appendChild(tdRecibo);
+    tr.appendChild(tdClave);
+    tr.appendChild(tdArchivo);
+    tr.appendChild(tdPagina);
+    tr.appendChild(tdTipo);
+    tbody.appendChild(tr);
+  }
+});
+
+const botonLimpiar = document.getElementById("limpiar");
+botonLimpiar.addEventListener("click", function () {
+  clearTable();
 });

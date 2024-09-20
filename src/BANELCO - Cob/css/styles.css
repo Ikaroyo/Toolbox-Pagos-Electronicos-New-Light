@@ -1,36 +1,36 @@
 body {
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   color: #333;
   font-family: "Lato", sans-serif;
-  margin: 0;
 }
 
 #drop-area {
-  width: 90vw;
+  width: 95vw;
   height: auto;
   text-align: center;
-  padding: 20px;
-  margin: 20px auto;
-  background-color: #fff;
-  border: 2px dashed #ddd;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 0;
+  background-color: #ffffff;
+
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s;
+  /* align to center */
+  margin: auto;
 }
 
 #drop-area:hover {
-  background-color: #f5f5f5;
-  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+  background-color: #d0d0d0;
+  color: #000;
 }
 
 #drop-area p {
   font-size: 16px;
   color: #666;
-  margin: 10px 0;
 }
 
 #file-list {
@@ -41,29 +41,29 @@ body {
 #result-table {
   margin: 20px auto;
   border-collapse: collapse;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 #result-table th,
 #result-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 8px;
+  border: 1px solid #ccc;
   transition: background-color 0.3s;
-  text-align: center;
+  text-align: right;
 }
 
 #result-table th {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   color: #333;
+  text-align: center;
   cursor: pointer;
   font-weight: bold;
 }
 
 #result-table td {
-  background-color: #fff;
+  background-color: #fafafa;
 }
 
 #result-table tbody tr:hover {
@@ -72,5 +72,5 @@ body {
 
 #result-table th:hover,
 #result-table td:hover {
-  background-color: #e5e5e5;
+  background-color: #e0e0e0;
 }

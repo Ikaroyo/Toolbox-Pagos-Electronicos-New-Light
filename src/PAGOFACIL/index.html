@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pago Facil</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="left">
+        <div id="dropArea"
+            style="width: 100%; height: 300px; border: 2px dashed gray; text-align: center; padding: 30px;">
+            Arrastra y suelta los archivos pA y OP aquí
+        </div>
+
+        <div class="tablas">
+            <div class="table-left">
+                <button id="tabla-pA" class="hidden">Procesar Tabla</button>
+                <table id="dataTable-pA" class="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Fecha Recaudación</th>
+                            <th>Total Recaudado</th>
+                            <th>Cupones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="table-right">
+                <button id="btn-tabla-pA" class="hidden">Procesar Tabla</button>
+                <table id="dataTable-OP" class="dataTable">
+
+                    <thead>
+                        <tr>
+                            <th>Fecha Pago</th>
+                            <th>Cupones</th>
+                            <th>Total Recaudado</th>
+                            <th hidden>Archivo</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

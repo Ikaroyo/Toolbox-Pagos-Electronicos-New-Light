@@ -1,0 +1,78 @@
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: "Lato", sans-serif;
+  font-size: large;
+  overflow-x: hidden;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#dropArea {
+  border: 2px dashed #999;
+  border-radius: 5px;
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+#dataTable {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+#dataTable th,
+#dataTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+#dataTable th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+#dataTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#dataTable tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+button {
+  background-color: #ff6b6b;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px auto;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff8b8b;
+}
+
+.hidden {
+  display: none;
+}

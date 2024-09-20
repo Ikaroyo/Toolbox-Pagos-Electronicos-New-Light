@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="stylesheet" href="css/navbar.css" />
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
 </head>
 
 <body>
@@ -37,11 +36,29 @@
           <a href="#" class="link-btn" onclick="loadPage('RAPIPAGO/index.html')">Rapipago</a>
         </div>
       </li>
+
+      <li class="navbar-dropdown">
+        <a href="">Pago Facil</a>
+        <div class="dropdown">
+          <a href="#" class="link-btn" onclick="loadPage('PAGOFACIL/index.html')">Pago Facil</a>
+        </div>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="">Carina</a>
+        <div class="dropdown">
+          <a href="#" class="link-btn" onclick="loadPage('LINK/index.html')">Link</a>
+          <a href="#" class="link-btn" onclick="loadPage('MUNICIPALIDAD/index.html')">Municipalidad</a>
+          <a href="#" class="link-btn" onclick="loadPage('COBRO EXPRESS/index.html')">Cobro Express</a>
+          <a href="#" class="link-btn" onclick="loadPage('SUPERVIELLE/index.html')">Supervielle</a>
+        </div>
+      </li>
+      <!--
       <li class="navbar-dropdown">
         <a href="">Municipalidad</a>
         <div class="dropdown">
           <a href="#" class="link-btn" onclick="loadPage('MUNICIPALIDAD/index.html')">Municipalidad</a>
         </div>
+      -->
       </li>
       <li class="navbar-dropdown">
         <a href="">Extra</a>
@@ -51,16 +68,13 @@
           <a href="#" class="link-btn" onclick="loadPage('Extra/buscarClaves.html')	">Buscar Claves</a>
         </div>
       </li>
-
       <span></span>
       <li class="navbar-dropdown">
 
-        <lottie-player src="css/dark.json" background="transparent" loop speed="1" onmouseover="this.play()"
+        <lottie-player src="css/light.json" background="transparent" speed="1" loop onmouseover="this.play();"
           onmouseout="this.stop()"
-          onclick="window.location.href='https://ikaroyo.github.io/Toolbox-Pagos-Electronicos-New/'"></lottie-player>
-
+          onclick="window.location.href='https://ikaroyo.github.io/Toolbox-Pagos-Electronicos-New-Light/'"></lottie-player>
       </li>
-
     </ul>
   </nav>
 
